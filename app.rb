@@ -31,5 +31,22 @@ post '/coaches/create' do
 	redirect '/coaches'
 end
 
+get '/coaches/:coach' do
+	ap params
+	@name = params['coach']
+	erb :show
+end
+
+#all posts have redirects
+# why not coaches/:name/delete ??
+post '/coaches/delete/:name' do
+	ap params
+	name = params['name']
+	Coach.delete(name)
+	redirect '/coaches'
+end
+
+
+
 
 

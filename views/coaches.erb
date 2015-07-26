@@ -7,7 +7,9 @@ This is a list of your coaches!
 
 <ul>
 	<!-- shows -->
+	<!-- go through our data collection that contains our coaches and prints each coach as clickable-->
 	<% @coaches.each do |coach| %>
-		<li><%= coach %></li>
+		<li><a href="/coaches/<%= coach %>"><%= coach %></a></li>
 	<% end %>
 </ul>
+
