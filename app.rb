@@ -14,10 +14,21 @@ end
 #@coaches is not accessible until its line
 # ap is for Awesome Print
 get '/coaches' do 
-	ap "this is the coaches pages"
+	# ap "this is the coaches pages"
 	@coaches = Coach.all
-	ap @coaches
 	erb :coaches
+end
+
+get '/coaches/new' do
+	erb :new
+end
+
+post '/coaches/create' do
+	coach = params['coach_name']
+	Coach.create(coach)
+	#accept some params
+	#actually adds a coach
+	redirect '/coaches'
 end
 
 
